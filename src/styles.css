@@ -1,0 +1,10 @@
+body {
+    background: #000;
+    color: aliceblue;
+}
+
+.main-seccion {
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 25%;
+}

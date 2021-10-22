@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     BrowserRouter as Router,
@@ -12,24 +12,18 @@ import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
 export const AppRouter = () => {
-
-    const {logueado} = useSelector(state => state.logueado)
     
-    const [isOpen, setIsOpen] = useState(logueado)
     const dispatch = useDispatch();
-
-
+    
+    const {check} = useSelector(state => state.logueado);
     useEffect(() => {
-        const secion = localStorage.getItem('token');
-        if ( secion ) {
-            dispatch( login( !!secion ) );
-            setIsOpen( true )
-        } else {
-            setIsOpen(false)
-            console.log('secion inactiva')
-        }
-    }, [dispatch, isOpen])
 
+            const secion = localStorage.getItem('token');
+            if ( secion ) {
+                dispatch( login( !!secion ) );
+            } 
+    
+    }, [dispatch])
 
     return (
         <div>
@@ -39,14 +33,14 @@ export const AppRouter = () => {
                         <PublicRoute 
                             path="/login"
                             component={ LoginScreen }
-                            isAuthenticated={ isOpen }                            
+                            isAuthenticated={ check }                            
                         />
                              
                         <PrivateRoute 
-                            path="/"
                             exact
+                            isAuthenticated={ check }
+                            path="/"
                             component={ HomeScreen }
-                            isAuthenticated={ isOpen }
                         />
                         <Redirect to="/login" />
                     </Switch>

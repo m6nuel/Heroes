@@ -9,7 +9,6 @@ export const HomeScreen = () => {
     const handleLogout = () => {
 
         dispatch( stratLogout() );
-        console.log('salir')
     }
 
     return (

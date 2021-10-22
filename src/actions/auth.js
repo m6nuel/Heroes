@@ -7,16 +7,14 @@ export const startLogin = ( email, password ) => {
 
         try {
             const peticion = await axios.post('http://challenge-react.alkemy.org/', {'email': email,'password': password});
-            const resp = peticion;
-            console.log(resp)
+
             const { token } = peticion.data;
             if ( token ) {
                 localStorage.setItem( 'token', token )
             }
-            console.log( !!token )
             diskpatch( login( !!token ) )
         } catch (error) {
-            // console.log(error)
+            console.log('Credenciales Incorrectas')
         }
     }
 }
@@ -36,5 +34,8 @@ export const stratLogout = () => {
 }
 
 export const logout = () => ({
-    type: types.logout 
+    type: types.logout,
+    payload: {
+        logueado: false
+    }
 })

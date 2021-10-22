@@ -26,8 +26,8 @@ export const LoginScreen = () => {
 
                     return errors;
                 }}
-                onSubmit={({ email,password }) => {                    
-                    console.log(email,password)
+                onSubmit={({ email,password }) => {
+                    console.log(email, password)   
                 }}
             >
                 {( { errors } ) => (

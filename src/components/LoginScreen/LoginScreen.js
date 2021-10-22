@@ -1,7 +1,13 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { startLogin } from '../../actions/auth';
+
 
 export const LoginScreen = () => {
+
+    const dispatch = useDispatch();
+
     return (
         <>
             <Formik
@@ -26,8 +32,7 @@ export const LoginScreen = () => {
 
                     return errors;
                 }}
-                onSubmit={({ email,password }) => {
-                    console.log(email, password)   
+                onSubmit={({ email,password }) => {  
                 }}
             >
                 {( { errors } ) => (

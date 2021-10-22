@@ -1,10 +1,10 @@
 import { types } from "../types/types";
 
-// {
-//     logueado: 
-// }
+const initialState = {
+    logueado: false
+}
 
-export const authenticated = ( state = {}, action ) => {
+export const authenticated = ( state = initialState, action ) => {
     switch ( action.type ) {
         case types.login:
             return {

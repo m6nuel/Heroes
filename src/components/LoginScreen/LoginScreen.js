@@ -33,6 +33,7 @@ export const LoginScreen = () => {
                     return errors;
                 }}
                 onSubmit={({ email,password }) => {  
+                    dispatch( startLogin( email, password ) )
                 }}
             >
                 {( { errors } ) => (

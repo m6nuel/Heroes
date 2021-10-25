@@ -10,3 +10,12 @@ export const logueo = ( email, password ) => {
         
     }
 }
+
+export const search = ( heroe ) => {
+    try {
+        const resp = axios.get( `https://superheroapi.com/api/10227697953733690/search/${ heroe }` );
+        
+    } catch (error) {
+        
+    }
+}

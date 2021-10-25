@@ -1,5 +1,8 @@
+import { Field, Form, Formik } from 'formik';
 import React from 'react'
 import Modal from 'react-modal';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeModal } from '../../actions/modal';
 
 const customStyles = {
     content: {
@@ -15,23 +18,49 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const SerachModal = () => {
+    const dispatch = useDispatch();
 
-    const closeModal = () =>{
+    const {openModal} = useSelector(state => state.modal)
 
+    const closeeModal = () =>{
+        dispatch( closeModal() );
     }
 
 
     return (
         <Modal
-            isOpen={true}
-            // onAfterOpen={afterOpenModal}
-            onRequestClose={ closeModal }
+            isOpen={ openModal }
+            onRequestClose={ closeeModal }
             style={customStyles}
-            contentLabel="Example Modal"
+            closeTimeoutMS={ 200 }
+            className="modal bg-dark"
+            overlayClassName="modal-fondo"
         >
-            <h1>Modal</h1>
-            <hr/>
-            <h2>Hola Modal</h2>
+            <Formik
+                initialValues={{
+                    heroe:''
+                }}
+                onSubmit={( heroe )=>{
+                    console.log( heroe )
+                }}
+            >
+                {()=> (
+                    <div>
+                        <Form>
+                            <div className="form-group input-group mb-3">
+                                <button type="submit" className="input-group-text btn btn-primary"> Buscar Heroes </button>
+                            <Field 
+                                type="text" 
+                                className="form-control"
+                                placeholder="Buscar Heroe"
+                                name="heroe"
+                                autoComplete="off"
+                            />
+                            </div>
+                        </Form>
+                    </div>
+                )}
+            </Formik>
         </Modal>
     )
 }

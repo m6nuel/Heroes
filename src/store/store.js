@@ -1,9 +1,11 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { authenticated } from "../reducers/authenticated";
+import { modal } from "../reducers/modal";
 
 const reducers = combineReducers({
     logueado: authenticated,
+    modal: modal,
 
 })
 

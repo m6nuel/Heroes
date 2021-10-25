@@ -8,7 +8,7 @@ export const HomeScreen = () => {
 
 
 
-getHeroes('po').then( heroe => console.log(heroe))
+getHeroes('power').then( heroe => console.log(heroe))
 
 
     return (

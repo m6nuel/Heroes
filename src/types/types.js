@@ -7,7 +7,7 @@ export const types = {
 
     check: '[Auth] Check',
 
-    openModal: '[Modal] Open',
-    closeModal: '[Modal] Close',
+    openModal: '[Modal] Open Search',
+    closeModal: '[Modal] Close Search',
     
 }

@@ -9,5 +9,7 @@ export const types = {
 
     openModal: '[Modal] Open Search',
     closeModal: '[Modal] Close Search',
+
+    searchHeroes: '[Heroes] Search'
     
 }

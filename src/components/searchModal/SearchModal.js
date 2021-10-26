@@ -3,8 +3,9 @@ import React from 'react'
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../actions/modal';
-import { getHeroes } from '../../peticiones/axios';
+import { startSearch } from '../../actions/search';
 import { HeroCard } from '../heroCard/HeroCard';
+// import { HeroCard } from '../heroCard/HeroCard';
 
 const customStyles = {
     content: {
@@ -23,7 +24,9 @@ export const SearchModal = () => {
 
     const dispatch = useDispatch();
 
-    const {openModal} = useSelector(state => state.modal)
+    const {openModal} = useSelector(state => state.modal);
+
+    const {heroes} = useSelector(state => state.search);
 
     const closeeModal = () =>{
         dispatch( closeModal() );
@@ -44,10 +47,7 @@ export const SearchModal = () => {
                     heroe:''
                 }}
                 onSubmit={( {heroe} )=>{
-                    getHeroes(heroe).then(heroes => {
-                        const {results} = heroes.data
-                        console.log(results)
-                    })
+                    dispatch( startSearch( heroe ) );
                 }}
             >
                 {()=> (
@@ -68,7 +68,15 @@ export const SearchModal = () => {
                 )}
             </Formik>
             <div className="row row-cols-1 row-cols-md-4 justify-content-center">
-                <HeroCard />
+                {
+                    heroes.map( (heroe) => {
+                        console.log(heroe)
+                        return  <HeroCard 
+                                    key={ heroe.id }
+                                    {...heroe}
+                                />
+                    })
+                }
             </div>
         </Modal>
     )

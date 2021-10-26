@@ -11,11 +11,6 @@ export const logueo = ( email, password ) => {
     }
 }
 
-export const search = ( heroe ) => {
-    try {
-        const resp = axios.get( `https://superheroapi.com/api/10227697953733690/search/${ heroe }` );
-        
-    } catch (error) {
-        
-    }
+export const getHeroes = async (name) => {
+    return await axios(`https://superheroapi.com/api.php/10227697953733690/search/${name}`)
 }

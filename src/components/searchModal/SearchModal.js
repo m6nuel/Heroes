@@ -3,6 +3,7 @@ import React from 'react'
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../actions/modal';
+import { getHeroes } from '../../peticiones/axios';
 
 const customStyles = {
     content: {
@@ -17,7 +18,8 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
-export const SerachModal = () => {
+export const SearchModal = () => {
+
     const dispatch = useDispatch();
 
     const {openModal} = useSelector(state => state.modal)
@@ -40,8 +42,8 @@ export const SerachModal = () => {
                 initialValues={{
                     heroe:''
                 }}
-                onSubmit={( heroe )=>{
-                    console.log( heroe )
+                onSubmit={( {heroe} )=>{
+                    getHeroes(heroe).then(heroes => console.log(heroes))
                 }}
             >
                 {()=> (

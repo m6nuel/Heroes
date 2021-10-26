@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../actions/modal';
-import { SerachModal } from '../searchModal/SerachModal';
+import { SearchModal } from '../searchModal/SearchModal';
 import { NavBar } from './NavBar';
 
 export const HomeScreen = () => {
@@ -17,7 +17,7 @@ export const HomeScreen = () => {
     return (
         <div>
             <NavBar />
-            <SerachModal />
+            <SearchModal />
 
             <button 
                 className="btn btn-primary" 

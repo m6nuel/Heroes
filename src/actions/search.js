@@ -6,7 +6,8 @@ export const startSearch = (heroe) => {
         try {
             getHeroes(heroe).then(heroes => {
                 const {results} = heroes.data;
-                dispatch( searchHeroe(results) )
+                dispatch( searchHeroe(results) );
+                localStorage.setItem( 'heroes', JSON.stringify( results ) );
             })
         } catch (error) {
             console.log(error)

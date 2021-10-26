@@ -6,6 +6,7 @@ import {
     Redirect
   } from 'react-router-dom';
 import { login } from '../actions/auth';
+import { searchHeroe } from '../actions/search';
 import { HomeScreen } from '../components/homeScreen/HomeScreen';
 import { LoginScreen } from '../components/LoginScreen/LoginScreen';
 import { PrivateRoute } from './PrivateRoute';
@@ -16,11 +17,17 @@ export const AppRouter = () => {
     const dispatch = useDispatch();
     
     const {check} = useSelector(state => state.logueado);
+
     useEffect(() => {
 
             const secion = localStorage.getItem('token');
             if ( secion ) {
                 dispatch( login( !!secion ) );
+            } 
+
+            const heroes = localStorage.getItem( 'heroes' );
+            if ( heroes ) {
+                dispatch( searchHeroe( JSON.parse( heroes ) ) )
             } 
     
     }, [dispatch])

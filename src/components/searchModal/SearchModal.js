@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../actions/modal';
 import { getHeroes } from '../../peticiones/axios';
+import { HeroCard } from '../heroCard/HeroCard';
 
 const customStyles = {
     content: {
@@ -43,13 +44,16 @@ export const SearchModal = () => {
                     heroe:''
                 }}
                 onSubmit={( {heroe} )=>{
-                    getHeroes(heroe).then(heroes => console.log(heroes))
+                    getHeroes(heroe).then(heroes => {
+                        const {results} = heroes.data
+                        console.log(results)
+                    })
                 }}
             >
                 {()=> (
                     <div>
                         <Form>
-                            <div className="form-group input-group mb-3">
+                            <div className="form-group input-group mb-3 g-4">
                                 <button type="submit" className="input-group-text btn btn-primary"> Buscar Heroes </button>
                             <Field 
                                 type="text" 
@@ -63,6 +67,9 @@ export const SearchModal = () => {
                     </div>
                 )}
             </Formik>
+            <div className="row row-cols-1 row-cols-md-4 justify-content-center">
+                <HeroCard />
+            </div>
         </Modal>
     )
 }

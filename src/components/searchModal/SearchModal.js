@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react'
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
@@ -46,6 +46,15 @@ export const SearchModal = () => {
                 initialValues={{
                     heroe:''
                 }}
+                validate={ (values) => {
+                    const errors = {};
+                    if ( !values.heroe ) {
+                        errors.heroe = 'Ingrese el heroe a buscar'
+                    } else if ( values.heroe ){
+
+                    }
+                    return errors;
+                }}
                 onSubmit={( {heroe} )=>{
                     dispatch( startSearch( heroe ) );
                 }}
@@ -63,7 +72,14 @@ export const SearchModal = () => {
                                 autoComplete="off"
                             />
                             </div>
+                                <ErrorMessage
+                                    className="alert alert-danger"
+                                    name="heroe"
+                                    component="div"
+                                />
                         </Form>
+                            
+                            
                     </div>
                 )}
             </Formik>

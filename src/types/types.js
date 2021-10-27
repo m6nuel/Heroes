@@ -10,6 +10,8 @@ export const types = {
     openModal: '[Modal] Open Search',
     closeModal: '[Modal] Close Search',
 
-    searchHeroes: '[Heroes] Search'
+    searchHeroes: '[Heroes] Search',
+
+    equipo: '[Heroe] Equipo'
     
 }

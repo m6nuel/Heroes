@@ -1,8 +1,24 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { agregarAlEquipo } from '../../actions/equipo';
 
 export const HeroCard = ({id,connections,appearance,biography,image,name,powerstats,work}) => {
 
+    const dispatch = useDispatch();
+
+    const heroe = {
+        id,
+        connections,
+        appearance,
+        biography,
+        image,
+        name,
+        powerstats,
+        work
+    }
+
     const handleAgregar = () => {
+        dispatch( agregarAlEquipo( heroe ) )
         console.log('Agregar al Equipo');
     }
 

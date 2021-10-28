@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { agregarAlEquipo } from '../../actions/equipo';
 import { closeModal } from '../../actions/modal';
 
 export const HeroCard = ({id,connections,appearance,biography,image,name,powerstats,work}) => {
+    
+    const [heroeEquipo, setHeroeEquipo] = useState([])
 
+    console.log(heroeEquipo)
     const dispatch = useDispatch();
     const heroe = {
         id,
@@ -18,7 +21,8 @@ export const HeroCard = ({id,connections,appearance,biography,image,name,powerst
     }
 
     const handleAgregar = () => {
-        dispatch( agregarAlEquipo( heroe ) )
+        dispatch( agregarAlEquipo( heroe ) );
+        setHeroeEquipo(heroe,...heroeEquipo)
 
         dispatch( closeModal() )
     }

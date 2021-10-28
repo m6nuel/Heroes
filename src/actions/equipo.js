@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { types } from "../types/types";
 
 
-export const agregarAlEquipo = ( hero ) => ({
-    type: types.equipo,
-    payload: {
-        heroesEquipo: hero,
+export const agregarAlEquipo = ( hero ) => {
+    
+    return{
+        type: types.equipo,
+        payload: {
+            heroesEquipo: hero
+        }
     }
-})
+}

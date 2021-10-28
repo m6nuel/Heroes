@@ -1,13 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux';
 import { agregarAlEquipo } from '../../actions/equipo';
 import { closeModal } from '../../actions/modal';
 
 export const HeroCard = ({id,connections,appearance,biography,image,name,powerstats,work}) => {
-    
-    const [heroeEquipo, setHeroeEquipo] = useState([])
 
-    console.log(heroeEquipo)
     const dispatch = useDispatch();
     const heroe = {
         id,
@@ -21,9 +18,7 @@ export const HeroCard = ({id,connections,appearance,biography,image,name,powerst
     }
 
     const handleAgregar = () => {
-        dispatch( agregarAlEquipo( heroe ) );
-        setHeroeEquipo(heroe,...heroeEquipo)
-
+        dispatch( agregarAlEquipo( heroe ) )
         dispatch( closeModal() )
     }
 
@@ -34,11 +29,11 @@ export const HeroCard = ({id,connections,appearance,biography,image,name,powerst
                     <img src={ image.url } className="card-img-top" alt="..."/>
                     <div className="card-body">
                         <p className="card-text">{biography.alignment}</p>
+                    </div>
                         <button 
-                            className="btn btn-primary"
+                            className="btn btn-primary m-3"
                             onClick={ handleAgregar }
                         > Agregar al equipo </button>
-                    </div>
             </div>
         </>
     )

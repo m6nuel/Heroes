@@ -2,6 +2,10 @@ body {
     background: #000;
     color: aliceblue;
 }
+.container {
+    max-width: 90%;
+    max-height: 80%;
+}
 
 .main-seccion {
     margin: 0 auto;

@@ -1,15 +1,18 @@
+// import { useState } from "react";
 import { types } from "../types/types";
 
+// const [heroes, setHeroes] = useState([])
+
 const initialState = {
-    equipo: []
+    heroesEquipo: [],
 }
 
 export const equipo = ( state= initialState, action ) => {
     switch ( action.type ) {
         case types.equipo:
             return {
-                heroe: action.payload.equipo,
-                ...equipo
+                ...state,
+                heroesEquipo: action.payload.heroesEquipo,
             }
             
 

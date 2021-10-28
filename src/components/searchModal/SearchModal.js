@@ -62,7 +62,7 @@ export const SearchModal = () => {
                 {()=> (
                     <div>
                         <Form>
-                            <div className="form-group input-group mb-3 g-4">
+                            <div className="container form-group input-group mb-3 g-4">
                                 <button type="submit" className="input-group-text btn btn-primary"> Buscar Heroes </button>
                             <Field 
                                 type="text" 

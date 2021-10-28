@@ -24,7 +24,7 @@ export const HomeScreen = () => {
                 className="btn btn-primary" 
                 onClick={ handleModal }
             > Buscar Heroes </button>
-            <EquipoHeroes />
+            <EquipoHeroes className="container" />
         </div>
     )
 }

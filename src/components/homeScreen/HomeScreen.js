@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 
 import React from 'react';
 import { getHeroes } from '../../axios/axios';
+=======
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../actions/modal';
+import { ModalInfo } from '../modalInfo/ModalInfo';
+import { SearchModal } from '../searchModal/SearchModal';
+import { EquipoHeroes } from './EquipoHeroes';
+>>>>>>> rama3
 import { NavBar } from './NavBar';
 
 export const HomeScreen = () => {
@@ -8,6 +17,7 @@ export const HomeScreen = () => {
 
 
 
+<<<<<<< HEAD
 getHeroes('spider').then( heroe => console.log(heroe))
 
 
@@ -42,5 +52,30 @@ getHeroes('spider').then( heroe => console.log(heroe))
                 </div>
             </div>
         </>
+=======
+    const handleModal = () => {
+        dispatch( openModal() );
+    }
+
+    return (
+        <div>
+            <NavBar />
+            <SearchModal />
+
+            <button 
+                className="btn btn-primary" 
+                onClick={ handleModal }
+            > Buscar Heroes </button>
+            <div className=" col-8 ">
+                <EquipoHeroes className="col-8" />
+
+            </div>
+            <div className="col-4">
+
+            </div>
+
+            <ModalInfo />
+        </div>
+>>>>>>> rama3
     )
 }

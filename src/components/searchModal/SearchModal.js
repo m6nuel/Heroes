@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../actions/modal';
 import { startSearch } from '../../actions/search';
 import { HeroCard } from '../heroCard/HeroCard';
-// import { HeroCard } from '../heroCard/HeroCard';
 
 const customStyles = {
     content: {
@@ -51,7 +50,6 @@ export const SearchModal = () => {
                     if ( !values.heroe ) {
                         errors.heroe = 'Ingrese el heroe a buscar'
                     } else if( values.heroe ){
-                        // errors.heroe = 'El heroe no existe Prueba ingresando otro nombre'
                     }
                     return errors;
                 }}

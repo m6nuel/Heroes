@@ -19,7 +19,8 @@ export const HeroCardEquipo = ({id,connections,appearance,biography,image,name,p
     }
 
     const handleInfo = () => {
-        dispatch( openModalInfo( heroe ) )
+        dispatch( openModalInfo( heroe ) );
+        localStorage.setItem('heroeDetalle', JSON.stringify( heroe ) )
     }
     const handleEliminar = () => {
         const eliminar = heroe.id;

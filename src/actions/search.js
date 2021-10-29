@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import { getHeroes } from "../peticiones/axios";
 import { types } from "../types/types";
 
@@ -6,8 +7,12 @@ export const startSearch = (heroe) => {
         try {
             getHeroes(heroe).then(heroes => {
                 const {results} = heroes.data;
-                dispatch( searchHeroe(results) );
-                localStorage.setItem( 'heroes', JSON.stringify( results ) );
+                if (results) {
+                    dispatch( searchHeroe(results) );
+                    localStorage.setItem( 'heroes', JSON.stringify( results ) );
+                } else {
+                    Swal.fire('Heroe No encontrado') 
+                }
             })
         } catch (error) {
             console.log(error)

@@ -18,8 +18,10 @@ Modal.setAppElement('#root');
 export const ModalInfo = () => {
     
     const {modalInfo} = useSelector(state => state.modalInfo);
+        
+    const heroeDetalle = localStorage.getItem( 'heroeDetalle' )
+    const dataHero = JSON.parse(heroeDetalle)
 
-    
     const dispatch = useDispatch();
 
     const closeeModalInfo = () => {
@@ -33,19 +35,34 @@ export const ModalInfo = () => {
                 onRequestClose={ closeeModalInfo }
                 style={customStyles}
                 closeTimeoutMS={ 200 }
-                className="modal-info bg-dark"
+                className="modal-info bg-ligth"
                 overlayClassName="modal-fondo"
             >
-                <div className="row" >
-                    <div className="col-6">
-                    </div>
-                    <div className="col-6">
-                        <h1>Modal Info</h1>
-                        <h1>Modal Info</h1>
-                        <h1>Modal Info</h1>
-                    </div>
-                </div>
+                {
+                    (dataHero) &&
+                        <div className="row g-0">
+                            <h1>Informacion del Heroe</h1>
+                            <div className="col-md-6">
+                                <img src={ dataHero.image.url } className="img-fluid rounded-start" alt="..."/>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="card-body">
+                                    <p className="card-text">Nombre:           { dataHero.name } </p>
+                                    <p className="card-text">Peso:             { dataHero.appearance.weight[1] }</p>
+                                    <p className="card-text">Altura:           { dataHero.appearance.height[1] }  </p>
+                                    <p className="card-text">Alias:            { dataHero.biography.aliases[0] }</p>
+                                    <p className="card-text">Lugar de Trabajo: { dataHero.work.occupation }</p>
+                                </div>
+                            </div>
+                        </div>
+                }
             </Modal>
         </>
     )
 }
+// 
+// { dataHero.height }
+// 
+// { dataHero. }
+// { dataHero. }
+// { dataHero. }

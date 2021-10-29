@@ -32,13 +32,13 @@ export const PowerStats = () => {
 
     return (
         <>
-            <div className="col-md-12">
-                <div className="powerStats"> intelligence: { sumaIntelligence } </div>
-                <div className="card-text"> Strength:      { sumaStreng } </div>
-                <div className="card-text"> Speed:         { sumaSpeed } </div>
-                <div className="card-text"> Durability:    { sumaDurab } </div>
-                <div className="card-text"> Power:         { sumaPower } </div>
-                <div className="card-text"> Combat:        { sumaCombat } </div>
+            <div className="col-md-12 m-5">
+                <div className="powerStats">Intelligence:  { sumaIntelligence/heroe.length } </div>
+                <div className="card-text"> Strength:      { sumaStreng/heroe.length } </div>
+                <div className="card-text"> Speed:         { sumaSpeed/heroe.length } </div>
+                <div className="card-text"> Durability:    { sumaDurab/heroe.length } </div>
+                <div className="card-text"> Power:         { sumaPower/heroe.length } </div>
+                <div className="card-text"> Combat:        { sumaCombat/heroe.length } </div>
             </div>
         </>
     )

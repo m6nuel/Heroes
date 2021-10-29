@@ -6,6 +6,7 @@ import { ModalInfo } from '../modalInfo/ModalInfo';
 import { SearchModal } from '../searchModal/SearchModal';
 import { EquipoHeroes } from './EquipoHeroes';
 import { NavBar } from './NavBar';
+import { PowerStats } from './PowerStats';
 
 export const HomeScreen = () => {
 
@@ -24,13 +25,17 @@ export const HomeScreen = () => {
             <button 
                 className="btn btn-primary col-1" 
                 onClick={ handleModal }
-            > Buscar Heroes </button>
+            >
+                Buscar Heroes 
+            </button>
+            
             <div className=" col-6 ">
-                <EquipoHeroes className="col-4" />
+                <EquipoHeroes className="col" />
 
             </div>
-            <div className="col-4">
+            <div className="col-3">
                 <h3> powerstats promedios del Equipo </h3>
+                <PowerStats />
             </div>
 
             <ModalInfo />

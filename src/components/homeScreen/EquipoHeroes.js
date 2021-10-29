@@ -9,8 +9,7 @@ export const EquipoHeroes = () => {
     return (
         <>  <div className="container-sm">
                 <div className="container-sm" >
-                    <h3 className="justify-text-center">Elige 6 Heroes para el equipo</h3>
-                    <div className="row row-cols-1 row-cols-md-4 justify-content-center">
+                    <div className="row row-cols-1 row-cols-md-3 cards-columns">
                         {
                             heroesEquipo.map( (heroe) => {
                                 return  <HeroCardEquipo

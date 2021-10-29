@@ -28,25 +28,35 @@ export const HeroCardEquipo = ({id,connections,appearance,biography,image,name,p
 
     return (
         <>
-            <div className="card m-2 col-3">
-                    <h5 className="card-title m-2 bg-dark">{ name }</h5>
-                <img src={ image.url } className="card-img-center m-2" alt="..."/>
-                <span className="bg-dark"> { id } </span>
-                <div className="d-grid gap-2 m-2 col-12 mx-auto">
-                    <button 
-                        className="btn btn-primary btn-lg"
-                        onClick={ handleInfo }
-                        >
-                        Detalles 
-                    </button>
-                    <button 
-                        className="btn btn-danger btn-lg"
-                        onClick={ handleEliminar }
-                        >
-                        Eliminar 
-                    </button>
+
+                <div className="card m-2 bg-dark">
+                    <div className="col">
+                        <span className="card-title"> { name } </span>
+                            <img src={ image.url } className="card-img" alt={ name } />
+                        <div className="col-md-12">
+                                <div className="card-text"> intelligence: { powerstats.intelligence } </div>     
+                                <div className="card-text"> Strength:     { powerstats.strength } </div>
+                                <div className="card-text"> Speed:        { powerstats.speed } </div>
+                                <div className="card-text"> Durability:   { powerstats.durability } </div>
+                                <div className="card-text"> Power:        { powerstats.power } </div>
+                                <div className="card-text"> Combat:       { powerstats.combat } </div>
+                        <button 
+                            className="btn btn-primary col-6"
+                            onClick={ handleInfo }
+                            >
+                            Detalles 
+                        </button>
+                        <button 
+                            className="btn btn-danger col-6"
+                            onClick={ handleEliminar }
+                            >
+                            Eliminar 
+                        </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+
         </>
     )
 }

@@ -50,8 +50,8 @@ export const SearchModal = () => {
                     const errors = {};
                     if ( !values.heroe ) {
                         errors.heroe = 'Ingrese el heroe a buscar'
-                    } else if ( values.heroe ){
-
+                    } else if( values.heroe ){
+                        // errors.heroe = 'El heroe no existe Prueba ingresando otro nombre'
                     }
                     return errors;
                 }}

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from '../../actions/modal';
 import { ModalInfo } from '../modalInfo/ModalInfo';
 import { SearchModal } from '../searchModal/SearchModal';
@@ -12,6 +12,8 @@ export const HomeScreen = () => {
 
     const dispatch = useDispatch();
 
+    const {heroesEquipo} = useSelector(state => state.equipo)
+    console.log(heroesEquipo.length)
 
     const handleModal = () => {
         dispatch( openModal() );
@@ -30,7 +32,14 @@ export const HomeScreen = () => {
             </button>
             
             <div className=" col-6 ">
-                <EquipoHeroes className="col" />
+
+                {
+                    ( heroesEquipo.length <= 6 ) 
+                    ? 
+                    <EquipoHeroes className="col" />
+                    :
+                    alert( 'Solo son 6 heroes' )
+                }
 
             </div>
             <div className="col-3">

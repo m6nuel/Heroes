@@ -19,7 +19,7 @@ export const HeroCardEquipo = ({id,connections,appearance,biography,image,name,p
     }
 
     const handleInfo = () => {
-        dispatch( openModalInfo() )
+        dispatch( openModalInfo( heroe ) )
     }
     const handleEliminar = () => {
         const eliminar = heroe.id;

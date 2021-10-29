@@ -10,8 +10,6 @@ const customStyles = {
         left: '50%',
         right: 'auto',
         bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
     },
 };
 Modal.setAppElement('#root');
@@ -19,7 +17,8 @@ Modal.setAppElement('#root');
 
 export const ModalInfo = () => {
     
-    const {modalInfo} = useSelector(state => state.modalInfo)
+    const {modalInfo} = useSelector(state => state.modalInfo);
+
     
     const dispatch = useDispatch();
 
@@ -37,11 +36,15 @@ export const ModalInfo = () => {
                 className="modal-info bg-dark"
                 overlayClassName="modal-fondo"
             >
-                <h1>Modal Info</h1>
-                <h1>Modal Info</h1>
-                <h1>Modal Info</h1>
-                <h1>Modal Info</h1>
-                <h1>Modal Info</h1>
+                <div className="row" >
+                    <div className="col-6">
+                    </div>
+                    <div className="col-6">
+                        <h1>Modal Info</h1>
+                        <h1>Modal Info</h1>
+                        <h1>Modal Info</h1>
+                    </div>
+                </div>
             </Modal>
         </>
     )

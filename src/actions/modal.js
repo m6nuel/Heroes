@@ -15,10 +15,11 @@ export const closeModal = () => ({
     }
 })
 
-export const openModalInfo = () => ({
+export const openModalInfo = ( heroe ) => ({
     type: types.openModalInfo,
     payload: {
-        modalInfo: true
+        modalInfo: true,
+        heroe: heroe
     }
 })
 

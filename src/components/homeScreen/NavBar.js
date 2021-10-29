@@ -15,11 +15,7 @@ export const NavBar = () => {
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
-<<<<<<< HEAD
                     <span className="navbar-brand" href="#">Heroes App</span>
-=======
-                    <span className="navbar-brand">Heroes App</span>
->>>>>>> rama3
                         <button className="btn btn-danger text-end" onClick={ handleLogout }> Salir </button>
                 </div>
             </nav>

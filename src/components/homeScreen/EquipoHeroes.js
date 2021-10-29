@@ -14,10 +14,10 @@ export const EquipoHeroes = () => {
                         {
                             heroesEquipo.map( (heroe) => {
                                 return  <HeroCardEquipo
-                                className="container-sm"
-                                key={ heroe.id }
-                                {...heroe}
-                                />
+                                            className="container-sm"
+                                            key={ heroe.id }
+                                            {...heroe}
+                                        />
                             })
                         }
                     </div>

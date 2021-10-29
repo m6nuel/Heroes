@@ -14,3 +14,17 @@ export const closeModal = () => ({
         openModal: false
     }
 })
+
+export const openModalInfo = () => ({
+    type: types.openModalInfo,
+    payload: {
+        modalInfo: true
+    }
+})
+
+export const closeModalInfo = () => ({
+    type: types.closeModalInfo,
+    payload: {
+        modalInfo: false
+    }
+})

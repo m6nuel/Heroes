@@ -39,7 +39,7 @@ export const SearchModal = () => {
             onRequestClose={ closeeModal }
             style={customStyles}
             closeTimeoutMS={ 200 }
-            className="modal bg-dark"
+            className="modal bg-dark justify-content-center"
             overlayClassName="modal-fondo"
         >
             <Formik

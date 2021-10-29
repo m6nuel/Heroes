@@ -10,3 +10,10 @@ export const agregarAlEquipo = ( hero ) => {
         }
     }
 }
+
+export const eliminarHeroes = (id) => ({
+    type: types.eliminar,
+    payload: {
+        heroesEquipo: id
+    }
+})

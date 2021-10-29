@@ -3,13 +3,15 @@ import thunk from "redux-thunk";
 import { authenticated } from "../reducers/authenticated";
 import { equipo } from "../reducers/equipo";
 import { modal } from "../reducers/modal";
+import { modalInfo } from "../reducers/modalInfo";
 import { search } from "../reducers/search";
 
 const reducers = combineReducers({
     logueado: authenticated,
     modal: modal,
     search: search,
-    equipo: equipo
+    equipo: equipo,
+    modalInfo: modalInfo
 
 })
 

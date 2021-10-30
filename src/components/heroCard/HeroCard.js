@@ -1,9 +1,15 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { agregarAlEquipo } from '../../actions/equipo';
 import { closeModal } from '../../actions/modal';
 
 export const HeroCard = ({id,connections,appearance,biography,image,name,powerstats,work}) => {
+
+    // const {heroesEquipo} = useSelector(state => state.equipo)
+    // const heroesBuenos = heroesEquipo.filter( heroe => heroe.biography.alignment === "good" );
+    // const heroesMalos = heroesEquipo.filter( heroe => heroe.biography.alignment === "bad" );
+
+
 
     const dispatch = useDispatch();
     const heroe = {
@@ -18,8 +24,8 @@ export const HeroCard = ({id,connections,appearance,biography,image,name,powerst
     }
 
     const handleAgregar = () => {
-        dispatch( agregarAlEquipo( heroe ) )
-        dispatch( closeModal() )
+            dispatch( agregarAlEquipo( heroe ) )
+            dispatch( closeModal() )
     }
 
     return (
@@ -33,7 +39,9 @@ export const HeroCard = ({id,connections,appearance,biography,image,name,powerst
                         <button 
                             className="btn btn-primary m-3"
                             onClick={ handleAgregar }
-                        > Agregar al equipo </button>
+                        >
+                            Agregar al equipo 
+                        </button>
             </div>
         </>
     )

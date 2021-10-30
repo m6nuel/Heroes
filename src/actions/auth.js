@@ -1,4 +1,5 @@
 import axios from "axios"
+import Swal from "sweetalert2";
 import { types } from "../types/types"
 
 
@@ -14,7 +15,7 @@ export const startLogin = ( email, password ) => {
                 }
                 diskpatch( login( !!token ) )
             } catch (error) {
-                console.log('Credenciales Incorrectas')
+                Swal.fire('Credenciales Incorrectas!!!')
             }
 
     }

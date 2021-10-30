@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import React from 'react'
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { startLogin } from '../../actions/auth';
 
@@ -70,7 +70,8 @@ export const LoginScreen = () => {
                                         />
                                         
                                         <ErrorMessage name="password" component={() =>(
-                                            <div className="text-start text-danger" > {errors.password} </div>)
+                                            <div className="text-start text-danger" > {errors.password} </div>
+                                            )
                                         } 
                                         />
                                         

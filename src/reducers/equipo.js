@@ -1,12 +1,16 @@
+
 import { types } from "../types/types";
 
 
 
 const initialState = {
-    heroesEquipo: [],
+    heroesEquipo: []
 }
 
 export const equipo = ( state= initialState, action ) => {
+    
+
+
     switch ( action.type ) {
         case types.equipo:
             return {

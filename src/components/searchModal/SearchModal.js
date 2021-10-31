@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../actions/modal';
 import { startSearch } from '../../actions/search';
 import { HeroCard } from '../heroCard/HeroCard';
+import 'animate.css';
 
 const customStyles = {
     content: {
@@ -81,7 +82,7 @@ export const SearchModal = () => {
                     </div>
                 )}
             </Formik>
-            <div className="row row-cols-1 row-cols-md-4 justify-content-center">
+            <div className="row row-cols-1 row-cols-md-4 justify-content-center animate__animated animate__pulse">
                 {
                     heroes.map( (heroe) => {
                         return  <HeroCard 

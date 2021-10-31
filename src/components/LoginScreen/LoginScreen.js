@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { startLogin } from '../../actions/auth';
+import 'animate.css'
 
 
 export const LoginScreen = () => {
@@ -12,8 +13,8 @@ export const LoginScreen = () => {
         <>
             <Formik
                 initialValues = {{
-                    email: '',
-                    password: ''
+                    email: 'challenge@alkemy.org',
+                    password: 'react'
                 }}
                 validate={(values)=>{
                     let errors = {};
@@ -37,7 +38,7 @@ export const LoginScreen = () => {
                 }}
             >
                 {( { errors } ) => (
-                    <div className="modal-dialog text-center">
+                    <div className="modal-dialog text-center animate__animated animate__backInDown">
                         <div className="col-sm-8 main-seccion ">
                             <div className="modal-content shadow-lg p-3 mb-5 bg-body rounded">
                                 <div className="col-12 shadow-sm p-1 mb-1 bg-body rounded">

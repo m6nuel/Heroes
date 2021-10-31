@@ -8,7 +8,7 @@ export const EquipoHeroes = () => {
 
     return (
         <>  <div className="container-sm">
-                <div className="row row-cols-1 row-cols-md-3 cards-columns">
+                <div className="row row-cols-1 row-cols-md-3 cards-columns animate__animated animate__pulse">
                     {
                         heroesEquipo.map( (heroe) => {
                             return  <HeroCardEquipo

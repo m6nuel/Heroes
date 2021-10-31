@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { agregarAlEquipo } from '../../actions/equipo';
 import { closeModal } from '../../actions/modal';
 

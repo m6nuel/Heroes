@@ -15,7 +15,7 @@ export const startLogin = ( email, password ) => {
                 }
                 diskpatch( login( !!token ) )
             } catch (error) {
-                Swal.fire('Credenciales Incorrectas!!!')
+                Swal.fire('Credenciales Incorrectas')
             }
 
     }

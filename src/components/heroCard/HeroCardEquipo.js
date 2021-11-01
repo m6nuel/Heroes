@@ -30,9 +30,9 @@ export const HeroCardEquipo = ({id,connections,appearance,biography,image,name,p
     return (
         <>
 
-                <div className="card m-2 bg-dark">
-                    <div className="col">
-                        <span className="card-title"> { name } </span>
+                <div className="card me-md-2 mt-1 bg-dark">
+                    <div className="col-12 justify-content-center">
+                        <span className="card-title col-12 bg-dark"> { name } </span>
                             <img src={ image.url } className="card-img" alt={ name } />
                         <div className="col-md-12">
                                 <div className="card-text"> intelligence: { powerstats.intelligence } </div>     

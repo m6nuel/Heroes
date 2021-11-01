@@ -32,13 +32,17 @@ export const PowerStats = () => {
 
     return (
         <>
-            <div className="col-md-12 m-5">
-                <div className="powerStats">Intelligence:  { sumaIntelligence/heroe.length } </div>
-                <div className="card-text"> Strength:      { sumaStreng/heroe.length } </div>
-                <div className="card-text"> Speed:         { sumaSpeed/heroe.length } </div>
-                <div className="card-text"> Durability:    { sumaDurab/heroe.length } </div>
-                <div className="card-text"> Power:         { sumaPower/heroe.length } </div>
-                <div className="card-text"> Combat:        { sumaCombat/heroe.length } </div>
+            <div className="col-8 mt-4 animate__animated animate__backInDown">
+                <ul className="list-group list-group-flush ">
+                    <li className="list-group-item list-group list-group-item-action m-1 list-group-item-primary text-center"> Estadisticas de Poder </li>
+                    <li className="list-group-item list-group list-group-item-action m-1 list-group-item-primary"> Inteligencia: { (sumaIntelligence/heroe.length).toFixed(2)} </li>
+                    <li className="list-group-item list-group list-group-item-action m-1 list-group-item-primary"> Inteligencia: { (sumaIntelligence/heroe.length).toFixed(2)} </li>
+                    <li className="list-group-item list-group list-group-item-action m-1 list-group-item-primary"> Fuerza      : { (sumaStreng/heroe.length).toFixed(2) } </li>
+                    <li className="list-group-item list-group list-group-item-action m-1 list-group-item-primary"> Velocidad   : { (sumaSpeed/heroe.length).toFixed(2) } </li>
+                    <li className="list-group-item list-group list-group-item-action m-1 list-group-item-primary"> Durabilidad : { (sumaDurab/heroe.length).toFixed(2) } </li>
+                    <li className="list-group-item list-group list-group-item-action m-1 list-group-item-primary"> Poder       : { (sumaPower/heroe.length).toFixed(2) } </li>
+                    <li className="list-group-item list-group list-group-item-action m-1 list-group-item-primary"> Combate     : { (sumaCombat/heroe.length).toFixed(2) } </li>
+                </ul>
             </div>
         </>
     )
